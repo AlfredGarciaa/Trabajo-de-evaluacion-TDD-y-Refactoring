@@ -1,4 +1,4 @@
-import Excepciones_Vacas_Toros from "./excepciones_Vacas_Toros";
+import Excepciones_Vacas_Toros from "./excepciones_Vacas_Toros.js";
 
 class Vacas_Toros
 {
@@ -6,6 +6,7 @@ class Vacas_Toros
   {
     this.numero_Caracteres;
     this.numero_Intentos;
+    this.tipo_Codigo;
     this.Excepciones = new Excepciones_Vacas_Toros();
   }
 
@@ -21,6 +22,11 @@ class Vacas_Toros
     this.numero_Intentos = numero_Int;
   }
 
+  definir_Tipo_Codigo(tipo_Cod)
+  {
+    this.tipo_Codigo = tipo_Cod;
+  } 
+
   getNumero_Caracteres()
   {
     return this.numero_Caracteres;
@@ -29,6 +35,11 @@ class Vacas_Toros
   getNumero_Intentos()
   {
     return this.numero_Intentos;
+  }
+
+  getTipo_Codigo()
+  {
+    return this.tipo_Codigo;
   }
 }
 

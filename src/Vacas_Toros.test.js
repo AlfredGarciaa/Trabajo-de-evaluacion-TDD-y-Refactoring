@@ -59,4 +59,10 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         respuesta = vacas_Toros.getNumero_Intentos();
         expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
     });
+
+    it("8) Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () => {
+        vacas_Toros.definir_Tipo_Codigo("Números");
+        respuesta = vacas_Toros.getTipo_Codigo("Números");
+        expect(respuesta).toEqual("Números");
+    });
 });
