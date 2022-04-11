@@ -1,39 +1,24 @@
+import Excepciones_Vacas_Toros from "./excepciones_Vacas_Toros";
+
 class Vacas_Toros
 {
   constructor()
   {
     this.numero_Caracteres;
     this.numero_Intentos;
-    this.limite_Inferior = 1;
-    this.limite_Superior = 10;
+    this.Excepciones = new Excepciones_Vacas_Toros();
   }
 
   definir_Numero_Caracteres(numero_Car)
   {
+    numero_Car = this.Excepciones.controlar_Cantidad_Caracteres(numero_Car);
     this.numero_Caracteres = numero_Car;
-    this.controlar_Cantidad_Caracteres();
-  }
-
-  controlar_Cantidad_Caracteres()
-  {
-    if ((this.numero_Caracteres < this.limite_Inferior) || (this.numero_Caracteres > this.limite_Superior))
-    {
-      this.numero_Caracteres = "Número incorrecto de caracteres. Intente otra vez por favor";
-    }
   }
 
   definir_Numero_Intentos(numero_Int)
   {
+    numero_Int = this.Excepciones.controlar_Cantidad_Intentos(numero_Int);
     this.numero_Intentos = numero_Int;
-    this.controlar_Cantidad_Intentos()
-  }
-
-  controlar_Cantidad_Intentos()
-  {
-    if (this.numero_Intentos < this.limite_Inferior)
-    {
-      this.numero_Intentos = "Número incorrecto de intentos. Intente otra vez por favor";
-    }
   }
 
   getNumero_Caracteres()
