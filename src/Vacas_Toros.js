@@ -1,4 +1,5 @@
 let numero_Caracteres;
+let numero_Intentos;
 const limite_Inferior = 1;
 const limite_Superior = 10;
 
@@ -21,4 +22,14 @@ function controlar_Cantidad_Caracteres()
   }
 }
 
-export {definir_Numero_Caracteres, getNumero_Caracteres};
+function definir_Numero_Intentos(numero_Int)
+{
+  numero_Intentos = numero_Int;
+}
+
+function getNumero_Intentos()
+{
+  return numero_Intentos;
+}
+
+export {definir_Numero_Caracteres, getNumero_Caracteres, definir_Numero_Intentos, getNumero_Intentos};
