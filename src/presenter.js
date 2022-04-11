@@ -1,14 +1,15 @@
-import {definir_Numero_Caracteres, getNumero_Caracteres} from './Vacas_Toros.js'
+import Vacas_Toros from './Vacas_Toros'
 
 const form = document.querySelector("#vista-1-form");
 const div = document.querySelector("#visualizaciones");
 const inputNumero_Caracteres = document.querySelector("#numero-caracteres");
+let vacas_Toros = new Vacas_Toros();
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
+  
   let numero_Caracteres = inputNumero_Caracteres.value;
-  definir_Numero_Caracteres(numero_Caracteres);
+  vacas_Toros.definir_Numero_Caracteres(numero_Caracteres);
 
-  div.innerHTML = "<p>" + getNumero_Caracteres() + "</p>";
+  div.innerHTML = "<p>" + vacas_Toros.getNumero_Caracteres() + "</p>";
 });

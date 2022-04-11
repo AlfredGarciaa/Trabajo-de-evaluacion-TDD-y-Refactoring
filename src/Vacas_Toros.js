@@ -7,7 +7,7 @@ class Vacas_Toros
       this.limite_Inferior = 1;
       this.limite_Superior = 10;
   }
-
+  
   definir_Numero_Caracteres(numero_Car)
   {
       this.numero_Caracteres = numero_Car;
