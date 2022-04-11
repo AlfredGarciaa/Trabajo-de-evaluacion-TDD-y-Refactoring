@@ -1,4 +1,6 @@
 let numero_Caracteres;
+const limite_Inferior = 1;
+const limite_Superior = 10;
 
 function getNumero_Caracteres()
 {
@@ -13,7 +15,7 @@ function definir_Numero_Caracteres(numero_Car)
   
 function controlar_Cantidad_Caracteres()
 {
-  if (numero_Caracteres <= 1 || numero_Caracteres == 11)
+  if ((numero_Caracteres < limite_Inferior) || (numero_Caracteres > limite_Superior))
   {
     numero_Caracteres = "Número incorrecto de caracteres. Intente otra vez por favor";
   }
