@@ -61,8 +61,8 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("8) Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () => {
-        vacas_Toros.definir_Tipo_Codigo("Números");
-        respuesta = vacas_Toros.getTipo_Codigo("Números");
-        expect(respuesta).toEqual("Números");
+        vacas_Toros.definir_Tipo_Codigo("Numeros");
+        respuesta = vacas_Toros.getTipo_Codigo();
+        expect(respuesta).toEqual("Numeros");
     });
 });
