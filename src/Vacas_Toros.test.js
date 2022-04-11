@@ -22,4 +22,11 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         let respuesta = getNumero_Caracteres();
         expect(respuesta).toEqual("Número incorrecto de caracteres. Intente otra vez por favor");
     });
+
+    it("4) Si se ingresa el número 11 como número de caracteres, mostrar el mensaje de <Número incorrecto de caracteres. Intente otra vez por favor>.", () => 
+    {
+        definir_Numero_Caracteres(11);
+        let respuesta = getNumero_Caracteres();
+        expect(respuesta).toEqual("Número incorrecto de caracteres. Intente otra vez por favor");
+    });
 });

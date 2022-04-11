@@ -13,8 +13,8 @@ function definir_Numero_Caracteres(numero_Car)
   
 function controlar_Cantidad_Caracteres()
 {
-  if (numero_Caracteres <= 1)
-  { 
+  if (numero_Caracteres <= 1 || numero_Caracteres == 11)
+  {
     numero_Caracteres = "Número incorrecto de caracteres. Intente otra vez por favor";
   }
 }
