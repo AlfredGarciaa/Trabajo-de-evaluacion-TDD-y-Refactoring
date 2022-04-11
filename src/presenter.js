@@ -1,15 +1,14 @@
-/*import sumar from "./Juego";
+import {definir_Numero_Caracteres, getNumero_Caracteres} from './Vacas_Toros.js'
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const form = document.querySelector("#vista-1-form");
+const div = document.querySelector("#visualizaciones");
+const inputNumero_Caracteres = document.querySelector("#numero-caracteres");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  let numero_Caracteres = inputNumero_Caracteres.value;
+  definir_Numero_Caracteres(numero_Caracteres);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
-});*/
+  div.innerHTML = "<p>" + getNumero_Caracteres() + "</p>";
+});
