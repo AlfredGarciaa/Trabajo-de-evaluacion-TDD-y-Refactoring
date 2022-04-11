@@ -27,6 +27,13 @@ class Vacas_Toros
     this.tipo_Codigo = tipo_Cod;
   } 
 
+  definir_Configuracion_Total(numero_Car, numero_Int, tipo_Cod)
+  {
+    this.definir_Numero_Caracteres(numero_Car);
+    this.definir_Numero_Intentos(numero_Int);
+    this.definir_Tipo_Codigo(tipo_Cod);
+  }
+
   getNumero_Caracteres()
   {
     return this.numero_Caracteres;

@@ -3,6 +3,8 @@ import Excepciones_Vacas_Toros from './excepciones_Vacas_Toros.js';
 
 const form = document.querySelector("#vista-1-form");
 const div = document.querySelector("#visualizaciones");
+const formCodigo_Secreto = document.querySelector("#codigo-secreto-form");
+
 const inputNumero_Caracteres = document.querySelector("#numero-caracteres");
 const inputNumero_Intentos = document.querySelector("#numero-intentos");
 const inputTipo_Codigo = document.querySelector("#tipo-codigo");
@@ -18,11 +20,18 @@ form.addEventListener("submit", (event) =>
   let numero_Intentos = inputNumero_Intentos.value;
   let tipo_Codigo = inputTipo_Codigo.value;
 
-  vacas_Toros.definir_Numero_Caracteres(numero_Caracteres);
-  vacas_Toros.definir_Numero_Intentos(numero_Intentos);
-  vacas_Toros.definir_Tipo_Codigo(tipo_Codigo);
+  vacas_Toros.definir_Configuracion_Total(numero_Caracteres, numero_Intentos, tipo_Codigo);
 
-  div.innerHTML =  `<p> ${vacas_Toros.getNumero_Caracteres()} </p>
-                    <p> ${vacasToros.getNumero_Intentos()} </p>
-                    <p> ${vacasToros.getTipo_Codigo()} </p>`;
+  mostrar_FormCodigo_Secreto(numero_Caracteres);
 });
+
+function mostrar_FormCodigo_Secreto(numero_Car)
+{
+  let formText = `<label for="codigo-1">Código secreto:</label>`;
+  for(var i=0; i<numero_Car; i++)
+  {
+    formText += '<input type="text" id="caracter-${i}" size="1" maxlength="1">';
+  }
+  formText += `<input type="submit" value="Jugar"/>`;
+  formCodigo_Secreto.innerHTML = formText;
+}
