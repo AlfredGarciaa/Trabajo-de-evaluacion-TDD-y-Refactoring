@@ -7,6 +7,7 @@ class Vacas_Toros
     this.numero_Caracteres;
     this.numero_Intentos;
     this.tipo_Codigo;
+    this.codigo_Secreto = [];
     this.Excepciones = new Excepciones_Vacas_Toros();
   }
 
@@ -26,6 +27,11 @@ class Vacas_Toros
   {
     this.tipo_Codigo = tipo_Cod;
   } 
+
+  definir_Codigo_Secreto(codigo_Sec)
+  {
+    this.codigo_Secreto = codigo_Sec; 
+  }
 
   definir_Configuracion_Total(numero_Car, numero_Int, tipo_Cod)
   {
@@ -47,6 +53,11 @@ class Vacas_Toros
   getTipo_Codigo()
   {
     return this.tipo_Codigo;
+  }
+
+  getCodigo_Secreto()
+  {
+    return this.codigo_Secreto;
   }
 }
 

@@ -65,4 +65,12 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         respuesta = vacas_Toros.getTipo_Codigo();
         expect(respuesta).toEqual("Numeros");
     });
+
+    it("9) Si se ingresa el código <4 5 7 8>, mostrar <4 5 7 8>", () => 
+    {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Numeros");
+        vacas_Toros.definir_Codigo_Secreto(['4','5','7','8']);
+        respuesta = vacas_Toros.getCodigo_Secreto();
+        expect(respuesta).toEqual(['4','5','7','8']);
+    });
 });
