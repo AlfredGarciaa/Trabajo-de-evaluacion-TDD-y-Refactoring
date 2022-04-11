@@ -40,7 +40,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("5) Si se ingresa el número 4 como número máximo de intentos, mostrar el número 4.", () =>
-     {
+    {
         vacas_Toros.definir_Numero_Intentos(5);
         respuesta = vacas_Toros.getNumero_Intentos();
         expect(respuesta).toEqual(5);
@@ -49,6 +49,13 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     it("6) Si se ingresa el número 0 como número máximo de intentos, mostrar el mensaje de <Número incorrecto de intentos. Intente otra vez por favor>", () => 
     {
         vacas_Toros.definir_Numero_Intentos(0);
+        respuesta = vacas_Toros.getNumero_Intentos();
+        expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
+    });
+
+    it("7) Si se ingresa el número -1 como número máximo de intentos, mostrar el mensaje de <Número incorrecto de intentos. Intente otra vez por favor>", () =>
+    {
+        vacas_Toros.definir_Numero_Intentos(-1);
         respuesta = vacas_Toros.getNumero_Intentos();
         expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
     });
