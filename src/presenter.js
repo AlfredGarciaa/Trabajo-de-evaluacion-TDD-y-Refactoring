@@ -7,7 +7,7 @@ let vacas_Toros = new Vacas_Toros();
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  
+
   let numero_Caracteres = inputNumero_Caracteres.value;
   vacas_Toros.definir_Numero_Caracteres(numero_Caracteres);
 
