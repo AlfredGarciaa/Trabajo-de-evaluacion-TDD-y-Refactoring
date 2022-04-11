@@ -1,0 +1,73 @@
+                        "" HISTORIAS DE USUARIO ""
+
+1ª Historia de Usuario:
+    COMO ???
+        -Primer jugador.
+    QUIERO ???
+        -Ingresar un código secreto que conste de 4 a 6 dígitos.
+    PARA ???
+        -Que el segundo jugador trate de adivinar el código ingresado.
+    CRITERIOS DE CONFIRMACIÓN:
+        -El primer jugador podrá ingresar el código secreto en un cuadro de texto.
+        -El primer jugador puede presionar el botón de iniciar para que el segundo jugador adivine el código secreto.
+
+2ª Historia de Usuario:
+    COMO ???
+        -Primer jugador.
+    QUIERO ???
+       -Que el código secreto no sea visible.
+    PARA ???
+        -Aumentar el grado de dificultad del segundo jugador.
+    CRITERIOS DE CONFIRMACIÓN:
+        -El código secreto ingresado en el cuadro de texto se verá con “****”.
+
+3ª Historia de Usuario:
+    COMO ???
+        -Segundo jugador.
+    QUIERO ???
+        -Saber la cantidad de dígitos del código secreto.
+    PARA ???
+        -Tener una pista de la cantidad de dígitos del código que tengo que adivinar.
+    CRITERIOS DE CONFIRMACIÓN:
+        -Que muestre en pantalla la cantidad de dígitos del código secreto. 
+
+4ª Historia de Usuario:
+    COMO ???
+        -Segundo Jugador 
+    QUIERO ???
+        -Saber cuántos intentos tengo disponibles
+    PARA ???
+        -Que el juego sea más interesante según los intentos disponibles.
+    CRITERIOS DE CONFIRMACIÓN:
+        -Se mostrará la cantidad de intentos que le queda al segundo jugador.
+
+5ª Historia de Usuario:
+    COMO ???
+        -Segundo jugador.
+    QUIERO ??? 
+        -Escribir el primer intento del código secreto.
+    PARA ???
+        -Saber si adivina o no el código secreto.
+    CRITERIOS DE CONFIRMACIÓN:
+        -Al ingresar el primer intento y si este es fallido que me muestre “Intentar de nuevo”.
+
+6ª Historia de Usuario:
+    COMO ???
+        -Segundo jugador.
+    QUIERO ???
+        -Saber si la respuesta coincide con cualquier dígito del código secreto.
+    PARA ???
+        -Saber si es Vaca(coincidencias encontradas en digitos).
+    CRITERIOS DE CONFIRMACIÓN:
+        -Se mostrará un * las veces que un dígito coincida con el código secreto.
+
+7ª Historia de Usuario:
+    COMO ???
+        -Segundo jugador.
+    QUIERO ???
+        -Saber si la respuesta coincide tanto en dígito como en posición.
+    PARA ???
+        -Saber si es Toro(coincidencias en dígito y posición).
+    CRITERIOS DE CONFIRMACIÓN:
+        -Valida si lo que ingresó el segundo jugador coincide con el mismo dígito y  la misma posición del dígito del código secreto.
+        -Se mostrará un “!” las veces que coincide en dígito y la posición.

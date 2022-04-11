@@ -1,14 +1,10 @@
-#### Para instalar las dependencias:
+                    ////////// Proyecto - Juego Toros y Vacas //////////
 
-npm install
-
-#### Comandos de uso:
-
-Ejecutar web-sever local parcel:
-npm start
-
-Ejecutar pruebas de unidad de forma continua --watch:
-npm test
-
-Ejecutar pruebas de unidad solo una vez:
-npm run test-once
+Entregables para el proyecto:
+    *** Historias de usuario con criterios de confirmación 
+        - (Como...Quiero.. Para… Criterios de confirmación)
+    *** La implementación es siguiendo TDD (aplicando refactoring)
+    *** Codigo github con -> Github Action para ejecución de pruebas
+    *** Por lo menos un commit por cada historia de usuario, mejor si hacen commits por cada        criterio de confirmación y prueba en verde
+            - También hagan commits cuando hagan una refactorización, servirá de mucho para la evaluación
+    *** Video 3-5 minutos que muestra el programa ejecutándose
