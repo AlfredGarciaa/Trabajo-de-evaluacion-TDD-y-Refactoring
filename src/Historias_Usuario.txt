@@ -1,4 +1,4 @@
-                        ============ TDD/FUNCIONALIDADES/LOGICA DE NEGOCIO ===========
+                        ============ HISTORIAS_USUARIO/TDD/FUNCIONALIDADES/LOGICA DE NEGOCIO ===========
 1ª Historia de Usuario:
     COMO ???
         -Primer jugador.
@@ -19,7 +19,7 @@
         -Aumentar el grado de dificultad del segundo jugador.
     CRITERIOS DE CONFIRMACIÓN:
         -El código secreto ingresado en el cuadro de texto se verá con “****”.
-        
+
 3ª Historia de Usuario:
     COMO ???
         -Segundo jugador.
