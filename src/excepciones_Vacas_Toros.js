@@ -24,6 +24,11 @@ class Excepciones_Vacas_Toros
         return numero_Intentos;
     }
 
+    Codigo_Secreto_Completo(codigo_Secreto, numero_Caracteres)
+    {
+        return codigo_Secreto.length == numero_Caracteres;
+    }
+
     Caracter_Numerico(caracter)
     {
         let numero = parseInt(caracter);
@@ -37,10 +42,13 @@ class Excepciones_Vacas_Toros
     controlar_Codigo_Secreto_Numero(codigo_Secreto, numero_Caracteres)
     {
         let caracter_Numerico;
+        if(!this.Codigo_Secreto_Completo(codigo_Secreto, numero_Caracteres))
+        {
+            return "Código secreto incompleto";
+        }
         for(var i = 0; i < numero_Caracteres; i++)
         {
             caracter_Numerico = this.Caracter_Numerico(codigo_Secreto[i]);
-            console.log(caracter_Numerico);
             if(!caracter_Numerico)
             {
                 return "Código secreto inválido. La configuración del juego es de Tipo: Números";
