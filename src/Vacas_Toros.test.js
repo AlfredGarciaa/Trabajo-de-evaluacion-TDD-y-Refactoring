@@ -10,6 +10,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     
      let vacas_Toros = new Vacas_Toros();
      let respuesta;
+     let opcion1=0;
     
     it("1.- Si se ingresa el número 4 como número de caracteres, mostrar el número 4.", () =>
     {
