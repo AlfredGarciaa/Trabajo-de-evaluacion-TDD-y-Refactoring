@@ -27,14 +27,7 @@ class Vacas_Toros
 
   definir_Codigo_Secreto_Default()
   {
-    if(this.generar_Codigo_Automatico)
-    {
-      this.codigo_Secreto = this.Funciones_Juego.generar_Codigo_Numeros(this.numero_Caracteres);
-    }
-    else
-    {
-      this.codigo_Secreto = this.Funciones_Juego.generar_Codigo_Vacio(this.numero_Caracteres);
-    }
+    this.codigo_Secreto = this.Funciones_Juego.generar_Codigo_Secreto_Default(this.numero_Caracteres, this.tipo_Codigo, this.generar_Codigo_Automatico);
   }
 
   definir_Numero_Intentos(numero_Int)

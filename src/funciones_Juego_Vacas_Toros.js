@@ -14,6 +14,31 @@ class Funciones_Juego
       return codigo_Sec;
     }
 
+    generar_Caracter_Numerico()
+    {
+        return Math.floor(Math.random() * 10);
+    }
+
+    generar_Caracter_Letra()
+    {
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        return alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+
+    generar_Codigo_Secreto_Aut(numero_Caracteres, tipo_Codigo)
+    {
+        this.codigo_Secreto_Automatico = [];
+        for(var i = 0; i < numero_Caracteres; i++)
+        {
+            switch(tipo_Codigo)
+            {
+                case "Numeros": {this.codigo_Secreto_Automatico.push(this.generar_Caracter_Numerico());break;}
+                case "Letras": {this.codigo_Secreto_Automatico.push(this.generar_Caracter_Letra());break;}
+            }
+        }
+        return this.codigo_Secreto_Automatico;
+    }
+
     generar_Codigo_Vacio(numero_Caracteres)
     {
         this.codigo_Secreto_Automatico = [];
@@ -24,19 +49,16 @@ class Funciones_Juego
         return this.codigo_Secreto_Automatico;
     }
 
-    generar_Codigo_Numeros(numero_Caracteres)
+    generar_Codigo_Secreto_Default(numero_Caracteres, tipo_Codigo, generar_Cod_Aut)
     {
-        this.codigo_Secreto_Automatico = [];
-        for(var i = 0; i < numero_Caracteres; i++)
+        if(generar_Cod_Aut)
         {
-            this.codigo_Secreto_Automatico.push(this.generar_Caracter_Numerico());
+            return this.generar_Codigo_Secreto_Aut(numero_Caracteres, tipo_Codigo);
         }
-        return this.codigo_Secreto_Automatico;
-    }
-
-    generar_Caracter_Numerico()
-    {
-        return Math.floor(Math.random() * 10);
+        else
+        {
+            return this.generar_Codigo_Vacio(numero_Caracteres);
+        }
     }
 }
 

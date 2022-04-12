@@ -60,7 +60,8 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
     });
 
-    it("8) Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () => {
+    it("8) Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () =>
+    {
         vacas_Toros.definir_Tipo_Codigo("Numeros");
         respuesta = vacas_Toros.getTipo_Codigo();
         expect(respuesta).toEqual("Numeros");
@@ -75,7 +76,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("10) Si se ingresa el código <A B C D>, mostrar el mensaje <Código secreto inválido. La configuración del juego es de Tipo: Números>", () =>
-     {
+    {
         vacas_Toros.definir_Configuracion_Total(4, 6, "Numeros", false);
         vacas_Toros.definir_Codigo_Secreto(['A', 'B', 'C', 'D']);
         respuesta = vacas_Toros.getCodigo_Secreto();
@@ -83,7 +84,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("11) Si se ingresa el código <1 2>, mostrar el mensaje <Código secreto incompleto>", () =>
-     {
+    {
         vacas_Toros.definir_Configuracion_Total(4, 6, "Numeros", false);
         vacas_Toros.definir_Codigo_Secreto(['1', '2']);
         respuesta = vacas_Toros.getCodigo_Secreto();
@@ -107,7 +108,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("14) Si se ingresa el código <1 2 3 0>, mostrar el mensaje <Código secreto inválido. La configuración del juego es de Tipo: Letras>", () =>
-     {
+    {
         vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", false);
         vacas_Toros.definir_Codigo_Secreto(['1','2','3','0']);
         respuesta = vacas_Toros.getCodigo_Secreto();
@@ -115,7 +116,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("15) Si se ingresa el código <A B>, mostrar el mensaje <Código secreto incompleto>", () =>
-     {
+    {
         vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", false);
         vacas_Toros.definir_Codigo_Secreto(['A', 'B']);
         respuesta = vacas_Toros.getCodigo_Secreto();
@@ -139,16 +140,26 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     });
 
     it("18) Si se ingresa el código <A 4>, mostrar el mensaje <Código secreto incompleto>", () =>
-     {
+    {
         vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", false);
         vacas_Toros.definir_Codigo_Secreto(['A','4']);
         respuesta = vacas_Toros.getCodigo_Secreto();
         expect(respuesta).toEqual("Código secreto incompleto");
     });
 
-    it("19) Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 números del <0> al <9> generados aleatoriamente como <4 8 0 6>", () => {
-        vacas_Toros.definir_Configuracion_Total(4, 6, "Combinado", true);
+    it("19) Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 números del <0> al <9> generados aleatoriamente como <4 8 0 6>", () =>
+    {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Numeros", true);
         respuesta = vacas_Toros.getCodigo_Secreto();
+        console.log(respuesta);
+        expect(respuesta).toEqual(vacas_Toros.getCodigo_Secreto());
+    });
+
+    it("20) Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 letras de la letra <a> a la <z> generados aleatoriamente como <W S P D>", () => 
+    {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", true);
+        respuesta = vacas_Toros.getCodigo_Secreto();
+        console.log(respuesta);
         expect(respuesta).toEqual(vacas_Toros.getCodigo_Secreto());
     });
 });
