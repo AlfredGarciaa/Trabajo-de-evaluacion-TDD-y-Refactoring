@@ -154,3 +154,7 @@ D) Historia de usuario:
         -Que la computadora genere un código secreto y asi empezar el juego.
     CRITERIOS DE CONFIRMACIÓN:
         -Como primer jugador puede jugar en modo solitario para que la computadora genere un código secreto aleatorio y comenzar el juego.
+
+
+
+            /////// Prueba commit ///////
