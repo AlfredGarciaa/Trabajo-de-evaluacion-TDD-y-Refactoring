@@ -137,4 +137,12 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         respuesta = vacas_Toros.getCodigo_Secreto();
         expect(respuesta).toEqual(['A','B','1','2']);
     });
+
+    it("18) Si se ingresa el código <A 4>, mostrar el mensaje <Código secreto incompleto>", () =>
+     {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Letras");
+        vacas_Toros.definir_Codigo_Secreto(['A','4']);
+        respuesta = vacas_Toros.getCodigo_Secreto();
+        expect(respuesta).toEqual("Código secreto incompleto");
+    });
 });
