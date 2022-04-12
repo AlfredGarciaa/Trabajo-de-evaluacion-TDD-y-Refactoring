@@ -196,4 +196,25 @@ describe("VACAS Y TOROS", () =>
         console.log(respuesta);
         expect(respuesta).toEqual(['V', 'V', '#', 'O']);
     });
+
+    // PRIMOS (parte del examen)
+
+    //DEJADO A MDIAS, ESPERO TOLERANCIA. GRACIAS :)
+
+    //COMPLETO SIN ERRORES, EJECUTABLE
+    it("ej.X. Si el código secreto es <1 2 3 4>, el tipo de código es “numeros” y se ingresa como intento el código <2 5 7 8>, debería mostrar la respuesta como <# o o o>, sólo aplicable en la primera posición", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Numeros", false);
+        vacasToros.definirCodigoSecreto(['1', '2', '3', '9']);
+        vacasToros.definirIntento(['2', '3', '4', '0']);
+        respuesta = vacasToros.getResultadoDeIntento();
+        console.log(respuesta);
+        expect(respuesta).toEqual(['V', 'V', '#', 'O']);
+    });
+
+      //INCOMPLETO, NO ES EJECUTABLE ...falta de tiempo
+    it("ej.Y. Si el código secreto es <1 2 3 4>, el tipo de código es “Numeros”, mostrar la respuesta como <% o o o> para la primera posicion del código secreto", () => {
+        vacasToros.definirCodigoSecreto(['1', '2', '3', '9']);
+        respuesta = funcionesVacasToros.generarPimos();
+        expect(respuesta).toEqual(['%', 'O', 'O', 'O']);
+    });
 });
