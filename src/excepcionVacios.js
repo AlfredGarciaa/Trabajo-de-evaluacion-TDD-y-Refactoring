@@ -1,6 +1,7 @@
-function mensaje_Advertencia_Datos_Vacios()
+function mensajeDeAdvertenciaDatosVacios()
 {
-    if(numero == ""){
+    if(numero == "")
+    {
         alert("Rellene todos los campos por favor.");
         return false;
     }
