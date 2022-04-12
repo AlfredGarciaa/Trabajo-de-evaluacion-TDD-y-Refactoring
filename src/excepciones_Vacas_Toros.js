@@ -64,7 +64,7 @@ class Excepciones_Vacas_Toros
             numero_Letra = this.Numero_O_Letra(codigo_Secreto[i], tipo_Codigo);
             if(!numero_Letra)
             {
-                return "Código secreto inválido. La configuración del juego es de Tipo: Numeros";
+                return `Código secreto inválido. La configuración del juego es de Tipo: ${tipo_Codigo}`;
             }
         }
         return codigo_Secreto;
