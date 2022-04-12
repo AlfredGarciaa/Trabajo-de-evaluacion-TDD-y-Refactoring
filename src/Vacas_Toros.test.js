@@ -10,7 +10,6 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     
      let vacas_Toros = new Vacas_Toros();
      let respuesta;
-     let opcion1=0;
     
     it("1.- Si se ingresa el número 4 como número de caracteres, mostrar el número 4.", () =>
     {
@@ -159,6 +158,14 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
     it("20) Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 letras de la letra <a> a la <z> generados aleatoriamente como <W S P D>", () => 
     {
         vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", true);
+        respuesta = vacas_Toros.getCodigo_Secreto();
+        console.log(respuesta);
+        expect(respuesta).toEqual(vacas_Toros.getCodigo_Secreto());
+    });
+
+    it("21) Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con letras de la letra <a> a la <z> o números del <0> al <9> generados aleatoriamente como <4 S 8 Y>", () =>
+    {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Combinado", true);
         respuesta = vacas_Toros.getCodigo_Secreto();
         console.log(respuesta);
         expect(respuesta).toEqual(vacas_Toros.getCodigo_Secreto());

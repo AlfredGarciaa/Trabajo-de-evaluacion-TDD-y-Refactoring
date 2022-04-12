@@ -8,28 +8,19 @@ const formCodigo_Secreto = document.querySelector("#codigo-secreto-form");
 const inputNumero_Caracteres = document.querySelector("#numero-caracteres");
 const inputNumero_Intentos = document.querySelector("#numero-intentos");
 const inputTipo_Codigo = document.querySelector("#tipo-codigo");
+const inputCodigo_Automatico = document.querySelector("#automatico");
 
 let vacas_Toros = new Vacas_Toros();
 let codigo_Secreto = [];
 
 function mostrar_FormCodigo_Secreto(numero_Car)
 {
-  let formText = `<label for="codigo-1">Código secreto:</label>`;
-  for(var i=0; i<numero_Car; i++)
-  {
-    formText += `<input type="text" id="caracter-${i}" size="1" maxlength="1">`;
-  }
-  formText += `<input type="submit" value="Jugar"/>   `;
+  let codigo_Secreto_Default = vacas_Toros.getCodigo_Secreto();
 
-  formCodigo_Secreto.innerHTML = formText;
-}
-
-function mostrar_FormCodigo_Secreto(numero_Car)
-{
   let formText = `<label for="codigo-1">Código secreto: </label>`;
   for(var i=0; i<numero_Car; i++)
   {
-    formText += `<input type="text" class="caracter" size="1" maxlength="1">`;
+    formText += `<input type="text" class="caracter" size="1" maxlength="1" value="${codigo_Secreto_Default[i]}">`;
   }
   formText += `<input type="submit" value="Jugar"/>   `;
   formCodigo_Secreto.innerHTML = formText;
@@ -42,8 +33,9 @@ formConfiguracion.addEvent_Listener("submit", (event) =>
   let numero_Caracteres = inputNumero_Caracteres.value;
   let numero_Intentos = inputNumero_Intentos.value;
   let tipo_Codigo = inputTipo_Codigo.value;
+  let codigo_Automatico = inputCodigo_Automatico.checked;
 
-  vacas_Toros.definir_Configuracion_Total(numero_Caracteres, numero_Intentos, tipo_Codigo);
+  vacas_Toros.definir_Configuracion_Total(numero_Caracteres, numero_Intentos, tipo_Codigo, codigo_Automatico);
   mostrar_FormCodigo_Secreto(numero_Caracteres);
   div.innerHTML = ``;
 });
@@ -58,5 +50,5 @@ formCodigo_Secreto.addEvent_Listener("submit", (event) =>
     codigo_Secreto.push(lista_Caracteres[i].value);
   }
   vacas_Toros.definir_Codigo_Secreto(codigo_Secreto);
-  div.innerHTML = `<p> ${vacas_Toros.getCodigo_Secreto()}</p>`;
+  div.innerHTML = `<p> CÓDIGO:  ${vacas_Toros.getCodigo_Secreto()}</p>`;
 });
