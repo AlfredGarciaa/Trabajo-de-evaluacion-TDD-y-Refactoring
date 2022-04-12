@@ -30,7 +30,7 @@ class Vacas_Toros
 
   definir_Codigo_Secreto(codigo_Sec)
   {
-    codigo_Sec = this.Excepciones.controlar_Codigo_Secreto_Numero(codigo_Sec, this.numero_Caracteres);
+    codigo_Sec = this.Excepciones.controlar_Codigo_Secreto_Numero(codigo_Sec, this.numero_Caracteres, this.tipo_Codigo);
     this.codigo_Secreto = codigo_Sec; 
   }
 

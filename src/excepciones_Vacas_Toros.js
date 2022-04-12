@@ -32,34 +32,52 @@ class Excepciones_Vacas_Toros
     Caracter_Numerico(caracter)
     {
         let numero = parseInt(caracter);
-        if(isNaN(numero))
-        {
-            return false;
-        }
-        return true;
+        return !isNaN(numero);
+    }
+    
+    Caracter_Letra(caracter)
+    {
+        let ascii = caracter.toUpperCase().charCodeAt(0);
+        return ((ascii > 64) && (ascii < 91));
     }
 
-    controlar_Tipo_Caracteres_Codigo_Secreto(codigo_Secreto, numero_Caracteres)
+    Numero_O_Letra(caracter, tipo_Cod)
     {
-        let caracter_Numerico;
+        if(tipo_Cod == "Numeros")
+        {
+            console.log(tipo_Cod);
+            return this.Caracter_Numerico(caracter);
+        }
+        else
+        {
+            if(tipo_Cod == "Letras")
+            {
+                return this.Caracter_Letra(caracter);
+            }
+            return true;
+        }
+    }
+    controlar_Tipo_Caracteres_Codigo_Secreto(codigo_Secreto, numero_Caracteres, tipo_Codigo)
+    {
+        let numero_Letra;
         for(var i = 0; i < numero_Caracteres; i++)
         {
-            caracter_Numerico = this.Caracter_Numerico(codigo_Secreto[i]);
-            if(!caracter_Numerico)
+            numero_Letra = this.Numero_O_Letra(codigo_Secreto[i], tipo_Codigo);
+            if(!numero_Letra)
             {
-                return "Código secreto inválido. La configuración del juego es de Tipo: Números";
+                return "Código secreto inválido. La configuración del juego es de Tipo: Numeros";
             }
         }
         return codigo_Secreto;
     }
 
-    controlar_Codigo_Secreto_Numero(codigo_Secreto, numero_Caracteres)
-    {
+    controlar_Codigo_Secreto_Numero(codigo_Secreto, numero_Caracteres, tipo_Codigo)
+    {  
         if(!this.Codigo_Secreto_Completo(codigo_Secreto, numero_Caracteres))
         {
             return "Código secreto incompleto";
         }
-        return this.controlar_Tipo_Caracteres_Codigo_Secreto(codigo_Secreto, numero_Caracteres);
+        return this.controlar_Tipo_Caracteres_Codigo_Secreto(codigo_Secreto, numero_Caracteres, tipo_Codigo);
     }
 }
 
