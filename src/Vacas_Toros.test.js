@@ -180,4 +180,36 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         respuesta = vacas_Toros.getResultado_Intento();
         expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
     });
+
+    it("23) Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <1 8 9 0>, mostrar el mensaje <Código secreto inválido. La configuración del juego es de Tipo: Letras>", () => {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", true);
+        vacas_Toros.definir_Codigo_Secreto(['P', 'T', 'W', 'C']);
+        vacas_Toros.definir_Intento(['1', '8', '9', '0']);
+        respuesta = vacas_Toros.getResultado_Intento();
+        expect(respuesta).toEqual("Código secreto inválido. La configuración del juego es de Tipo: Letras");
+    });
+
+    it("24) Si el código secreto es <7 8 0 1>, el tipo de código es “Números” y se ingresa como intento el código <p t w c> mostrar el mensaje <Código secreto inválido. La configuración del juego es de Tipo: Números>", () => {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Numeros", true);
+        vacas_Toros.definir_Codigo_Secreto(['7', '8', '0', '1']);
+        vacas_Toros.definir_Intento(['P', 'T', 'W', 'C']);
+        respuesta = vacas_Toros.getResultado_Intento();
+        expect(respuesta).toEqual("Código secreto inválido. La configuración del juego es de Tipo: Numeros");
+    });
+
+    it("25) Si el código secreto es <7 8 0 1>, el tipo de código es “Combinado” y se ingresa como intento el código <p t 0 c>, mostrar la respuesta como <o o o o>", () => {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Combinado", true);
+        vacas_Toros.definir_Codigo_Secreto(['7', '8', '0', '1']);
+        vacas_Toros.definir_Intento(['P', 'T', '0', 'C']);
+        respuesta = vacas_Toros.getResultado_Intento();
+        expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
+    });
+
+    it("26) Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <x y>, mostrar el mensaje <Código secreto incompleto>", () => {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", true);
+        vacas_Toros.definir_Codigo_Secreto(['P', 'T', 'W', 'C']);
+        vacas_Toros.definir_Intento(['P', 'T']);
+        respuesta = vacas_Toros.getResultado_Intento();
+        expect(respuesta).toEqual("Código secreto incompleto");
+    });
 });

@@ -10,6 +10,7 @@ class Vacas_Toros
     this.tipo_Codigo;
     this.generar_Codigo_Automatico;
     this.codigo_Secreto = [];
+    this.intento_Codigo = [];
     this.resultado_Intento = [];
     this.Excepciones = new Excepciones_Vacas_Toros();
     this.Funciones_Juego = new Funciones_Juego();
@@ -33,7 +34,8 @@ class Vacas_Toros
 
   definir_Intento(intento_Codigo)
   {
-    this.resultado_Intento = this.Funciones_Juego.generar_Resultado_Intento(this.numero_Caracteres);
+    this.intento_Codigo = intento_Codigo;
+    this.definir_Resultado_Intento();
   }
 
   definir_Numero_Intentos(numero_Int)
@@ -41,6 +43,12 @@ class Vacas_Toros
     numero_Int = this.Excepciones.controlar_Cantidad_Intentos(numero_Int);
     this.numero_Intentos = numero_Int;
   }
+
+  definir_Resultado_Intento()
+  {
+    this.resultado_Intento = this.Funciones_Juego.generar_Resultado_Intento(this.numero_Caracteres);
+    this.resultado_Intento = this.Excepciones.controlar_Intento_Codigo_Secreto(this.intento_Codigo, this.numero_Caracteres, this.tipo_Codigo, this.resultado_Intento);  
+  } 
 
   definir_Tipo_Codigo(tipo_Cod)
   {
@@ -50,7 +58,7 @@ class Vacas_Toros
   definir_Codigo_Secreto(codigo_Sec)
   {
     codigo_Sec = this.Funciones_Juego.convertir_Codigo_Secreto_Mayusculas(codigo_Sec);
-    codigo_Sec = this.Excepciones.controlar_Codigo_Secreto_Numero(codigo_Sec, this.numero_Caracteres, this.tipo_Codigo); 
+    codigo_Sec = this.Excepciones.controlar_Codigo_Secreto(codigo_Sec, this.numero_Caracteres, this.tipo_Codigo);
     this.codigo_Secreto = codigo_Sec;
   }
 

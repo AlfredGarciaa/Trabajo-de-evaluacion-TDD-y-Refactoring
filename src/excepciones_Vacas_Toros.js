@@ -87,13 +87,28 @@ class Excepciones_Vacas_Toros
         return codigo_Secreto;
     }
 
-    controlar_Codigo_Secreto_Numero(codigo_Secreto, numero_Caracteres, tipo_Codigo)
+    controlar_Codigo_Secreto(codigo_Secreto, numero_Caracteres, tipo_Codigo)
     {  
         if(!this.Codigo_Secreto_Completo(codigo_Secreto, numero_Caracteres))
         {
             return "Código secreto incompleto";
         }
         return this.controlar_Tipo_Caracteres_Codigo_Secreto(codigo_Secreto, numero_Caracteres, tipo_Codigo);
+    }
+
+    controlar_Intento_Codigo_Secreto(intento_Codigo, numero_Caracteres, tipo_Codigo, resultado_Codigo)
+    {
+        let control_Error;
+        if(!this.Codigo_Secreto_Completo(intento_Codigo, numero_Caracteres))
+        {
+            return "Código secreto incompleto";
+        }
+        control_Error = this.controlar_Tipo_Caracteres_Codigo_Secreto(intento_Codigo, numero_Caracteres, tipo_Codigo)
+        if(typeof(control_Error) == "string")
+        {
+            return control_Error;
+        }
+        return resultado_Codigo;
     }
 }
 
