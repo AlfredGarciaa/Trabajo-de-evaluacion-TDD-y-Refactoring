@@ -26,7 +26,19 @@ class Excepciones_Vacas_Toros
 
     Codigo_Secreto_Completo(codigo_Secreto, numero_Caracteres)
     {
-        return codigo_Secreto.length == numero_Caracteres;
+        for (var i = 0; i < numero_Caracteres; i++)
+        {
+            if(this.Caracter_Vacio(codigo_Secreto[i]))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    Caracter_Vacio(caracter)
+    {
+        return (caracter == "" || caracter == undefined);
     }
 
     Caracter_Numerico(caracter)
@@ -41,6 +53,11 @@ class Excepciones_Vacas_Toros
         return ((ascii > 64) && (ascii < 91));
     }
 
+    Caracter_Combinado(caracter)
+    {
+        return (this.Caracter_Letra(caracter) || this.Caracter_Numerico(caracter));
+    }
+
     Numero_O_Letra(caracter, tipo_Cod)
     {
         if(tipo_Cod == "Numeros")
@@ -53,7 +70,7 @@ class Excepciones_Vacas_Toros
             {
                 return this.Caracter_Letra(caracter);
             }
-            return true;
+            return this.Caracter_Combinado(caracter);
         }
     }
     controlar_Tipo_Caracteres_Codigo_Secreto(codigo_Secreto, numero_Caracteres, tipo_Codigo)

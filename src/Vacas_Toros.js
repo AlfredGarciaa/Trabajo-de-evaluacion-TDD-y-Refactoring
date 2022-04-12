@@ -46,7 +46,7 @@ class Vacas_Toros
   {
     for(var i = 0; i < codigo_Sec.length; i++)
     {
-        codigo_Sec[i] = codigo_Sec[i].toUpperCase();
+      codigo_Sec[i] = codigo_Sec[i].toString().toUpperCase();
     }
     return codigo_Sec;
   }
