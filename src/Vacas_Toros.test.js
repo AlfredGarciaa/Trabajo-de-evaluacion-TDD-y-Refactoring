@@ -97,4 +97,12 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         respuesta = vacas_Toros.getCodigo_Secreto();
         expect(respuesta).toEqual(['A','B','C','D']);
     });
+
+    it("13) Si se ingresa el código <a b c d>, mostrar <A B C D>", () => 
+    {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Letras");
+        vacas_Toros.definir_Codigo_Secreto(['a','b','c','d']);
+        respuesta = vacas_Toros.getCodigo_Secreto();
+        expect(respuesta).toEqual(['A','B','C','D']);
+    });
 });

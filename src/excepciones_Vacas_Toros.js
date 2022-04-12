@@ -45,7 +45,6 @@ class Excepciones_Vacas_Toros
     {
         if(tipo_Cod == "Numeros")
         {
-            console.log(tipo_Cod);
             return this.Caracter_Numerico(caracter);
         }
         else

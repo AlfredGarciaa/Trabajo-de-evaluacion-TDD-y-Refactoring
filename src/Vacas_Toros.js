@@ -30,15 +30,25 @@ class Vacas_Toros
 
   definir_Codigo_Secreto(codigo_Sec)
   {
+    codigo_Sec = this.convertir_Codigo_Secreto_Mayusculas(codigo_Sec);
     codigo_Sec = this.Excepciones.controlar_Codigo_Secreto_Numero(codigo_Sec, this.numero_Caracteres, this.tipo_Codigo);
     this.codigo_Secreto = codigo_Sec; 
   }
 
-  definir_Configuracion_Total(numero_Car, numero_Int, tipo_Cod)
+  definir_Configuracion_Total(nro_Caracteres, numero_Int, tip_Codigo)
   {
-    this.definir_Numero_Caracteres(numero_Car);
+    this.definir_Numero_Caracteres(nro_Caracteres);
     this.definir_Numero_Intentos(numero_Int);
-    this.definir_Tipo_Codigo(tipo_Cod);
+    this.definir_Tipo_Codigo(tip_Codigo);
+  }
+
+  convertir_Codigo_Secreto_Mayusculas(codigo_Sec)
+  {
+    for(var i = 0; i < codigo_Sec.length; i++)
+    {
+        codigo_Sec[i] = codigo_Sec[i].toUpperCase();
+    }
+    return codigo_Sec;
   }
 
   getNumero_Caracteres()
