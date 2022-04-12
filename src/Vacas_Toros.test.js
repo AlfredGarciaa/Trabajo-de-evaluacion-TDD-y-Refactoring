@@ -1,4 +1,5 @@
 import Vacas_Toros from './Vacas_Toros.js'
+import Funciones_Juego from "./funciones_Juego_Vacas_Toros.js"
 
 describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
  {
@@ -9,6 +10,7 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
      // GIT (Commits) -> GIT-HUB (Repositorio) -> GIT-ACTIONS (Pull Request en Main)
     
      let vacas_Toros = new Vacas_Toros();
+     let funciones_Vacas_Toros = new Funciones_Juego();
      let respuesta;
     
     it("1.- Si se ingresa el número 4 como número de caracteres, mostrar el número 4.", () =>
@@ -169,5 +171,13 @@ describe(" ******** JUEGO DE VACAS Y TOROS ******* ", () =>
         respuesta = vacas_Toros.getCodigo_Secreto();
         console.log(respuesta);
         expect(respuesta).toEqual(vacas_Toros.getCodigo_Secreto());
+    });
+
+    it("22) Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <x y o c>, mostrar la respuesta como <o o o o>", () => {
+        vacas_Toros.definir_Configuracion_Total(4, 6, "Letras", true);
+        vacas_Toros.definir_Codigo_Secreto(['P', 'T', 'W', 'C']);
+        vacas_Toros.definir_Intento(['X', 'Y', 'O', 'C']);
+        respuesta = vacas_Toros.getResultado_Intento();
+        expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
     });
 });

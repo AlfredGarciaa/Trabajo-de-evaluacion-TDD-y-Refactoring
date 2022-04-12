@@ -26,6 +26,17 @@ function mostrar_FormCodigo_Secreto(numero_Car)
   formCodigo_Secreto.innerHTML = formText;
 }
 
+function limpiar_Vista(vista)
+{
+  switch(vista)
+  {
+    case 1: {formCodigo_Secreto.innerHTML = ""; formConfiguracion.innerHTML = ""; div.innerHTML = ""; break;}
+    case 2: {}
+    case 3: {}
+    case 4: {}
+  }
+}
+
 formConfiguracion.addEvent_Listener("submit", (event) => 
 {
   event.prevent_Default();
@@ -37,7 +48,7 @@ formConfiguracion.addEvent_Listener("submit", (event) =>
 
   vacas_Toros.definir_Configuracion_Total(numero_Caracteres, numero_Intentos, tipo_Codigo, codigo_Automatico);
   mostrar_FormCodigo_Secreto(numero_Caracteres);
-  div.innerHTML = ``;
+  div.innerHTML = "";
 });
 
 formCodigo_Secreto.addEvent_Listener("submit", (event) => 
@@ -50,5 +61,15 @@ formCodigo_Secreto.addEvent_Listener("submit", (event) =>
     codigo_Secreto.push(lista_Caracteres[i].value);
   }
   vacas_Toros.definir_Codigo_Secreto(codigo_Secreto);
-  div.innerHTML = `<p> CÓDIGO:  ${vacas_Toros.getCodigo_Secreto()}</p>`;
+
+  let codigo_Secreto_Final = vacas_Toros.getCodigo_Secreto();
+  if(typeof(codigo_Secreto_Final) == "string")
+  {
+    div.innerHTML = `<p> CÓDIGO:  ${codigo_Secreto_Final}</p>`;
+  }
+  else
+  {
+    limpiarVista(1);
+  }
+  //div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
 });

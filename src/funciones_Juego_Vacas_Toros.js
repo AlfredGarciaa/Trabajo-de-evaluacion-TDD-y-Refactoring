@@ -3,6 +3,7 @@ class Funciones_Juego
     constructor()
     {
         this.codigo_Secreto_Automatico = [];
+        this.resultado_Intento = [];
     }
 
     convertir_Codigo_Secreto_Mayusculas(codigo_Sec)
@@ -29,6 +30,12 @@ class Funciones_Juego
         return this.generar_Caracter_Numerico();
     }
 
+    generar_Resultado_Intento(numero_Caracteres)
+    {
+        this.resultado_Intento = this.generar_Codigo_Vacio_Y_Lleno(numero_Caracteres, "O");
+        return this.resultado_Intento;
+    }
+
     generar_Caracter_Letra()
     {
         const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -52,14 +59,14 @@ class Funciones_Juego
         return this.codigo_Secreto_Automatico;
     }
 
-    generar_Codigo_Vacio(numero_Caracteres)
+    generar_Codigo_Vacio_Y_Lleno(numero_Caracteres, caracter)
     {
-        this.codigo_Secreto_Automatico = [];
+        let codigo_Auxiliar = [];
         for(var i = 0; i < numero_Caracteres; i++)
         {
-            this.codigo_Secreto_Automatico.push("");
+            codigo_Auxiliar.push(caracter);
         }
-        return this.codigo_Secreto_Automatico;
+        return codigo_Auxiliar;
     }
 
     generar_Codigo_Secreto_Default(numero_Caracteres, tipo_Codigo, generar_Cod_Aut)
@@ -70,7 +77,8 @@ class Funciones_Juego
         }
         else
         {
-            return this.generar_Codigo_Vacio(numero_Caracteres);
+            this.codigo_Secreto_Automatico = this.generar_Codigo_Vacio_Y_Lleno(numero_Caracteres, "")
+            return this.codigo_Secreto_Automatico;
         }
     }
 }

@@ -10,6 +10,7 @@ class Vacas_Toros
     this.tipo_Codigo;
     this.generar_Codigo_Automatico;
     this.codigo_Secreto = [];
+    this.resultado_Intento = [];
     this.Excepciones = new Excepciones_Vacas_Toros();
     this.Funciones_Juego = new Funciones_Juego();
   }
@@ -28,6 +29,11 @@ class Vacas_Toros
   definir_Codigo_Secreto_Default()
   {
     this.codigo_Secreto = this.Funciones_Juego.generar_Codigo_Secreto_Default(this.numero_Caracteres, this.tipo_Codigo, this.generar_Codigo_Automatico);
+  }
+
+  definir_Intento(intento_Codigo)
+  {
+    this.resultado_Intento = this.Funciones_Juego.generar_Resultado_Intento(this.numero_Caracteres);
   }
 
   definir_Numero_Intentos(numero_Int)
@@ -75,6 +81,11 @@ class Vacas_Toros
   getCodigo_Secreto()
   {
     return this.codigo_Secreto;
+  }
+
+  getResultado_Intento()
+  {
+    return this.resultado_Intento;
   }
 }
 
