@@ -116,6 +116,17 @@ class FuncionesDeJuego
         return resultadoDeIntento;
     }
 
+    //EXAMEN  
+    generarTernera(codigoSecreto, intentoCodigo, resultadoDeIntento)
+    {
+        this.listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
+        if(codigoSecreto[0] == intentoCodigo[0]-1 || codigoSecreto[0] == intentoCodigo[0]+1)
+        {
+            resultadoDeIntento[0] = "#";
+        }
+        return resultadoDeIntento;
+    }
+
     esError(resultadoIntento)
     {
         return typeof(resultadoIntento) == "string";
