@@ -117,12 +117,18 @@ class FuncionesDeJuego
     }
 
     //EXAMEN  
+
+    esTernera(codigoSecreto, intentoCodigo, pos)
+    {
+        return codigoSecreto[pos] == intentoCodigo[pos]-1 || codigoSecreto[pos] == intentoCodigo[pos]+1;
+    }
+
     generarTernera(codigoSecreto, intentoCodigo, resultadoDeIntento)
     {
         this.listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
         for(var  i= 0; i < intentoCodigo.length; i++)
         {
-            if(codigoSecreto[i] == intentoCodigo[i]-1 || codigoSecreto[i] == intentoCodigo[i]+1)
+            if(this.esTernera(codigoSecreto,intentoCodigo,i))
             {
                 resultadoDeIntento[i] = "#";
             }
