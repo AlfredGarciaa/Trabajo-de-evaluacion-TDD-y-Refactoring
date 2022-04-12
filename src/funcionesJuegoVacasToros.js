@@ -120,9 +120,12 @@ class FuncionesDeJuego
     generarTernera(codigoSecreto, intentoCodigo, resultadoDeIntento)
     {
         this.listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
-        if(codigoSecreto[0] == intentoCodigo[0]-1 || codigoSecreto[0] == intentoCodigo[0]+1)
+        for(var  i= 0; i < intentoCodigo.length; i++)
         {
-            resultadoDeIntento[0] = "#";
+            if(codigoSecreto[i] == intentoCodigo[i]-1 || codigoSecreto[i] == intentoCodigo[i]+1)
+            {
+                resultadoDeIntento[i] = "#";
+            }
         }
         return resultadoDeIntento;
     }
